@@ -14,10 +14,15 @@ struct BackButton: View {
                Image(systemName: "chevron.left")
                    .resizable()
                    .aspectRatio(contentMode: .fit)
-                   .frame(height: 20, alignment: .leading)
+                   .frame(width: 10, height: 16)
                    .foregroundColor(color)
-                   .padding(.horizontal, 16)
                    .font(Font.body.bold())
+                   .padding(10)
+                   .overlay(
+                       Circle()
+                           .stroke(Color.accentColor, lineWidth: 1.5)
+                   )
+                   .padding(.horizontal, 16)
             }
             .onAppear {
                 self.hasBeenShownAtLeastOnce = true
